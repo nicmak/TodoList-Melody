@@ -1,0 +1,96 @@
+.TodoList-container {
+  display: grid;
+    grid-template-columns: 1fr;
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(50px, auto);
+  }
+}
+
+.TodoList-input {
+  border: 1px solid rgb(155, 162, 166);
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding:10px;
+  font-size: 15px;
+}
+
+.TodoList-button {
+  color:white;
+  padding:10px;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 100%;
+  border: 1px solid white;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button-submit {
+  background: rgb(66, 133, 0);
+  &:hover {
+    background: white;
+    color: rgb(66, 133, 0);
+    border: 1px solid rgb(66, 133, 0);
+  }
+}
+
+.button-all {
+  background: $TrivagoBlue;
+  &:hover {
+    background: white;
+    color: $TrivagoBlue;
+    border: 1px solid $TrivagoBlue;
+  }
+}
+
+.button-open {
+  background: $TrivagoYellow;
+  &:hover {
+    background: white;
+    color: $TrivagoYellow;
+    border: 1px solid $TrivagoYellow;
+  }
+}
+
+.button-close {
+  background: $TrivagoRed;
+
+  &:hover {
+    background: white;
+    color: $TrivagoRed;
+    border: 1px solid $TrivagoRed;
+  }
+}
+
+.Filter-TodoList-Wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas:
+  "todoList"
+  "todoFilter"
+}
+
+.TodoList-Items {
+  grid-area: todoList;
+  max-height: 400px;
+  text-overflow: hidden;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, minmax(40px, auto));
+  grid-gap: 5px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  border-radius: 2px;
+  padding: 6px;
+}
+
+.TodoList-Item-Placeholder {
+  padding: 15px;
+}
+

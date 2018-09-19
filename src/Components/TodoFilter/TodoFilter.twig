@@ -1,0 +1,13 @@
+<div class="TodoList-filter {{ renderBottom ? "feature-renderBottom" : "" }}">
+  {% if renderBottom == true %}
+    {% include '../TodoForm/TodoForm.twig' with {
+      form: form,
+      inputText: inputText,
+      input: input
+    } only
+    %}
+  {% endif %}
+  <button class="TodoList-button button-all" ref="{{ filter }}" value="null">All</button>
+  <button class="TodoList-button button-open" ref="{{ filter }}" value="false">Open</button>
+  <button class="TodoList-button button-close" ref="{{ filter }}" value="true">Close</button>
+</div>

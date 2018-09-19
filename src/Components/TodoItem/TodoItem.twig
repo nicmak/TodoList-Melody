@@ -1,0 +1,18 @@
+
+
+
+{% if todo.done == true %}
+  <div class="TodoList-Item Item-Close" key="{{ todo.id }}">
+    <input class="TodoList-Item-Input" ref="{{ test }}" type="radio" value="{{ todo.id }}" checked="{{todo.done}}"/>
+    <label class="TodoList-Item-Text">{{todo.text}}</label>
+  </div>
+{% endif %}
+
+{% if todo.done == false %}
+  <div class="TodoList-Item Item-Open" key="{{ todo.id }}">
+    <input class="TodoList-Item-Input" ref="{{ test }}" type="radio" value="{{ todo.id }}" checked="{{todo.done}}"/>
+    <label class="TodoList-Item-Text">{{todo.text}}</label>
+  </div>
+{% endif %}
+
+

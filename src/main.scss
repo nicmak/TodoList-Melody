@@ -1,0 +1,30 @@
+@import './variables.scss';
+@import './Components/TodoFilter/TodoFilter.scss';
+@import './Components/TodoList/TodoList.scss';
+@import './Components/TodoItem/TodoItem.scss';
+
+.App-Container {
+  font-family: $font;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 10px;
+}
+
+.App-Container-header {
+  text-align: center;
+  margin: 0;
+  span {
+    font-size: 76px;
+    &:nth-child(1) {
+      color: $TrivagoBlue;
+    }
+    &:nth-child(2) {
+      color: $TrivagoYellow;
+    }
+    &:nth-child(3) {
+      color: $TrivagoRed;
+    }
+  }
+}
+

@@ -1,0 +1,43 @@
+<div class="TodoList-container">
+  {% if renderBottom == false %}
+    {% include '../TodoForm/TodoForm.twig' with {
+      form: form,
+      inputText: inputText,
+      input: input
+    } only
+    %}
+  {% endif %}
+  <div class="Filter-TodoList-Wrapper">
+    {% if filterAvail %}
+      {% include '../TodoFilter/TodoFilter.twig' with {
+          filter: filter,
+          form: form,
+          inputText: inputText,
+          input: input,
+          renderBottom: renderBottom
+        } only
+      %}
+    {% endif %}
+    <div class="TodoList-Items">
+      {% for todo in todos|reverse %}
+        {% if todo.done == filterStatus %}
+          {% include '../TodoItem/TodoItem.twig' with {
+              todo: todo,
+              input: input,
+              test: test,
+              filterStatus: filterStatus
+            } only
+          %}
+        {% elseif filterStatus == null %}
+          {% include '../TodoItem/TodoItem.twig' with {
+              todo: todo,
+              input: input,
+              test: test
+            } only
+          %}
+        {% endif %}
+      {% endfor %}
+      <div class="TodoList-Item-Placeholder"></div>
+    </div>
+  </div>
+</div>

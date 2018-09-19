@@ -1,0 +1,41 @@
+.TodoList-Item {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-self: center;
+  grid-auto-rows: minmax(40px, auto);
+}
+
+.Item-Open {
+  box-shadow: 0 1px 4px $TrivagoYellow;
+}
+
+.Item-Close {
+  box-shadow: 0 1px 4px $TrivagoRed;
+  label {
+    text-decoration: line-through;
+  }
+}
+
+.TodoList-Item-Input {
+  width: 18px;
+  align-self: center
+}
+
+.TodoList-Item-Text {
+  grid-column-start: 2;
+  grid-column-end: 9;
+  align-self: center;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 1024px) {
+  .TodoList-Item {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .TodoList-Item-Text {
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+}
+
